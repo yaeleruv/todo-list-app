@@ -1,3 +1,8 @@
+1. add task
+2. delete task
+3. toggle task
+4. edit task
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
