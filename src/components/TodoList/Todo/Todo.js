@@ -9,11 +9,17 @@ const Todo = (props) => {
 		<div className="list-item" style={{ textDecoration: style }}>
 			{props.content.task}
 			<button
-				class="delete is-pulled-right"
+				className="delete is-pulled-right"
 				onClick={() => {
 					props.onDelete(props.id);
 				}}
 			></button>
+			<button
+				className="is-pulled-right"
+				onClick={() => {
+					props.onToggle(props.id);
+				}}
+			>Done</button>
 		</div>
 	);
 };

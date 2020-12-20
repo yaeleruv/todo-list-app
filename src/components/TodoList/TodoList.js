@@ -20,7 +20,9 @@ const TodoList = (props) => {
 				key={index}
 				id={index}
 				onDelete={props.onDelete}
+				onToggle={props.onToggle}
 			/>
+			
 		);
 	});
 	return <div className="list-wrapper">{todos}</div>;
