@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
-import TodoList from './components/TodoList/TodoList';
-import SubmitForm from './components/SubmitForm';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header";
+import TodoList from "./components/TodoList/TodoList";
+import SubmitForm from "./components/SubmitForm";
+import "./App.css";
 
 // 1. add task V
 // 2. delete task V
@@ -10,32 +10,36 @@ import './App.css';
 // 4. edit task
 // Header — This will simply display some message above all of the tasks. 'You Have {number of tasks} Todos'
 
-// TodoList — This is a container for the list of todos. 
+// TodoList — This is a container for the list of todos.
 // if a task is Done the user can mark it as 'Done' by using line-through on the task.
 
-// SubmitForm — This is the form that is used to add new todos to the list. 
+// SubmitForm — This is the form that is used to add new todos to the list.
 // the user can add or remove task.
 
 class App extends Component {
-
   state = {
     tasks: [
       {
-        task: 'task 1',
+        task: "task 1",
         isDone: false,
       },
     ],
   };
 
   handleToggle = (index) => {
-    this.setState(state => {
+    this.setState((state) => {
       const tasks = state.tasks;
-      tasks[index] = {...tasks[index], isDone:!tasks[index].isDone};
+
+      tasks[index] = { 
+        ...tasks[index], 
+        isDone: !tasks[index].isDone 
+      };
+      
       return {
-        tasks: [...tasks]
+        tasks: [...tasks],
       };
     });
-    
+
     // console.log(index);
     // const task = this.state.tasks[index];
     // console.log(task);
@@ -59,14 +63,13 @@ class App extends Component {
   handleSubmit = (task, props) => {
     this.setState({
       tasks: [...this.state.tasks, { task, isDone: false }],
-
     });
   };
 
   render() {
     return (
-      <div className='wrapper'>
-        <div className='card frame'>
+      <div className="wrapper">
+        <div className="card frame">
           <Header numTodos={this.state.tasks.length} />
           <TodoList
             tasks={this.state.tasks}
@@ -81,6 +84,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
